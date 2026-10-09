@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b18">
+  <title>About — Hello World</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+    :root { color-scheme: dark; --ink: #f7f6ff; --muted: #aaa9c3; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; color: var(--ink); font-family: Manrope, ui-sans-serif, system-ui, sans-serif; background: radial-gradient(ellipse at 50% 30%, #252344 0%, #121426 42%, #090b18 85%); }
+    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .2; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(transparent, black 22%, black 78%, transparent); }
+    .site-header { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; padding: 28px clamp(22px, 6vw, 84px); }
+    .brand { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 800; letter-spacing: -.05em; } .brand-mark { margin-right: 7px; color: #d4bdff; } .brand-light { color: #aaa9c3; font-weight: 500; }
+    .site-nav { display: flex; align-items: center; gap: 8px; } .site-nav a { padding: 9px 13px; border: 1px solid transparent; border-radius: 999px; color: #aaa9c3; text-decoration: none; font-size: 12px; font-weight: 600; transition: color .2s, background .2s, border-color .2s; }
+    .site-nav a:hover, .site-nav a.active { color: #f7f6ff; background: #ffffff0a; border-color: #ffffff16; } .site-nav a:focus-visible, .brand:focus-visible, .contact-card:focus-visible { outline: 2px solid #d8c8ff; outline-offset: 4px; }
+    main { position: relative; z-index: 0; display: grid; place-items: center; min-height: calc(100svh - 82px); padding: 48px 22px 80px; }
+    .content { width: min(100%, 760px); animation: arrive .8s cubic-bezier(.2,.75,.25,1) both; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 23px; padding: 9px 14px; border: 1px solid #ffffff20; border-radius: 999px; background: #ffffff08; color: #d3cde9; font: 500 10px/1 'DM Mono', monospace; letter-spacing: .14em; text-transform: uppercase; } .eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: #a9f4d0; box-shadow: 0 0 12px #a9f4d0; }
+    h1 { margin: 0; font-size: clamp(3rem, 9vw, 6.4rem); font-weight: 800; letter-spacing: -.075em; line-height: .98; } h1 span { color: transparent; background: linear-gradient(100deg, #c5b4ff 5%, #f3b9e3 54%, #ffd6a6 95%); background-clip: text; -webkit-background-clip: text; }
+    .lead { max-width: 620px; margin: 25px 0 0; color: #c8c6d8; font-size: clamp(16px, 2.5vw, 19px); line-height: 1.8; }
+    .details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 36px; }
+    .detail { padding: 22px; border: 1px solid #ffffff16; border-radius: 18px; background: linear-gradient(145deg, #ffffff0d, #ffffff04); box-shadow: 0 20px 60px #0002; } .detail b { display: block; margin-bottom: 9px; color: #e6dcff; font-size: 14px; } .detail p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .contact-card { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 32px; padding: 23px 25px; border: 1px solid #ffffff1c; border-radius: 18px; background: #ffffff09; color: var(--ink); text-decoration: none; transition: transform .2s, background .2s, border-color .2s; } .contact-card:hover { transform: translateY(-2px); background: #ffffff10; border-color: #ffffff35; } .contact-card strong { display: block; margin-bottom: 5px; font-size: 15px; } .contact-card small { color: var(--muted); font-size: 13px; } .contact-card .arrow { color: #e5d5ff; font-size: 22px; }
+    .footer { margin-top: 48px; color: #77768f; font: 10px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; } .footer span { color: #aaa0cb; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 560px) { .site-header { padding: 19px 16px; } .site-nav { gap: 1px; } .site-nav a { padding: 8px 9px; font-size: 11px; } main { min-height: calc(100svh - 68px); padding-top: 35px; } .details { grid-template-columns: 1fr; } .contact-card { padding: 19px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Hello World home"><span class="brand-mark">✦</span> hello<span class="brand-light">world</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <article class="content">
+      <div class="eyebrow"><i aria-hidden="true"></i> The story behind the spark</div>
+      <h1>A little about <span>this place.</span></h1>
+      <p class="lead">Hello, World is a tiny corner of the internet built around a simple idea: every great thing starts with a first line, a curious thought, or a friendly hello.</p>
+      <div class="details">
+        <section class="detail"><b>Small beginnings</b><p>This page began as the classic first message in code—and grew into a welcoming space to explore.</p></section>
+        <section class="detail"><b>Made with care</b><p>Thoughtful details, a little motion, and a warm glow make the everyday web feel a bit more magical.</p></section>
+      </div>
+      <p class="footer">A small start. <span>Endless possibilities.</span></p>
+    </article>
+  </main>
+</body>
+</html>
